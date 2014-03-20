@@ -24,6 +24,7 @@ Add into environments/environment.rb after app configuration
       c.api_user     = 'your_user_name'
       c.api_password = 'your_api_password'
       c.client_id    = '' # optional. If set will be shown first.
+      c.alfanum_from = 'YourFrom' # optional. To set from if you are using it.
     end
 
 When you need to send sms call
