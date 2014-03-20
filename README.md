@@ -1,6 +1,6 @@
 # Websms
 
-TODO: Write a gem description
+This is trivial API implementation for http://websms.ru HTTP API
 
 ## Installation
 
@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add into environments/environment.rb after app configuration
+
+    Websms.configure do |c|
+      c.api_user     = 'your_user_name'
+      c.api_password = 'your_api_password'
+      c.client_id    = '' # optional. If set will be shown first.
+    end
+
+When you need to send sms call
+
+        Websms::Sender.send_message phone_number, text
 
 ## Contributing
 

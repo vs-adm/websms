@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sleephunter@gmail.com"]
   spec.summary       = %q{SMS HTTP API to websms.ru}
   spec.description   = %q{This gem is intend to siplify manage websms.ru SMS gateway HTTP API from Ruby apps.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/vs-adm/websms"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
-  spec.add_dependency "curb"
-  spec.add_dependency "iconv"
+  spec.add_development_dependency "rake", '~> 0'
+  spec.add_runtime_dependency "curb", '~> 0'
+  spec.add_runtime_dependency "iconv", '~> 0'
 end
