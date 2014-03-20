@@ -22,8 +22,10 @@ module Websms
       text = "#{c.client_id}: #{text}" if c.client_id
       etext = text.gsub(' ', '%20')
       etext = Iconv.conv('windows-1251', 'utf-8', etext)
+
+      from_phone = c.alfanum_from ? "&fromPhone=#{c.alfanum_from}" : ''
       # Send request
-      request = "#{sms_gateway}?fromPhone=LocumRu&http_username=#{sms_user}&http_password=#{sms_password}&Phone_list=#{number}&Message=#{etext}"
+      request = "#{sms_gateway}?http_username=#{sms_user}&http_password=#{sms_password}#{from_phone}&Phone_list=#{number}&Message=#{etext}"
       c = Curl::Easy.perform(request)
     end
 
